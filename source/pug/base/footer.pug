@@ -34,3 +34,8 @@ mixin footer(footerMod)
             +img("content/header", "logo", "jpg", 48, 48, "The Famous")
 
       +main-nav(footerLinks, "footer__nav")
+
+      a.footer__phone(href="tel:+74955555555") +7 (495) 555-55-55
+        +icon("icon-phone", 16, 16)
+      address.footer__address г. Москва, ул. Расплетина, 24
+        +icon("icon-pin", 16, 16)

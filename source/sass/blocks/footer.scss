@@ -1,6 +1,14 @@
 .footer {
-  min-height: 100px;
-  padding: 0 60px;
-
   background-color: transparent;
+}
+
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer__nav a {
+  color: $color-matterhorn;
 }
