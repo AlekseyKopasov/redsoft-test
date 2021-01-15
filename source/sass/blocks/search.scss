@@ -1,0 +1,24 @@
+.search {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  input {
+    padding: 13px 32px;
+    border: 1px solid $color-gainsboro;
+    border-right: none;
+    background-color: transparent;
+    outline: none;
+
+    transition: border-color $default-transition-settings;
+  }
+
+  input:hover,
+  input:active {
+    border-color: $color-russett;
+  }
+
+  input:focus {
+    border-color: $color-pink-swan;
+  }
+}

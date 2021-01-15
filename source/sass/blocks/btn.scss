@@ -1,0 +1,28 @@
+.btn {
+  padding: 13px 36px;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
+
+  color: $color-default-white;
+  background-color: $color-rebel;
+  border: none;
+  cursor: pointer;
+
+  transition: background-color $default-transition-settings;
+
+  &:hover,
+  &:focus {
+    background-color: $color-russett;
+    outline: none;
+    border: none;
+  }
+
+  &:active {
+    outline: none;
+    border: none;
+    background-color: $color-rebel;
+  }
+}

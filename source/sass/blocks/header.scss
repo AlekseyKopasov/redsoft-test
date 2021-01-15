@@ -9,28 +9,10 @@
   &__wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
+}
 
-  a,
-  p {
-    color: $color-night-rider;
-  }
-
-  ul {
-    display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
-
-    list-style: none;
-
-    li {
-      margin-right: 20px;
-    }
-  }
-
-  .main-nav__toggle {
-    display: none;
-  }
+.header__logo {
+  flex-shrink: 0;
 }
