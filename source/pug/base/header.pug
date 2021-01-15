@@ -1,5 +1,3 @@
-//- include ../mixins/img
-
 mixin header(headerMod, currentPage)
   -
     var headerLinks = [
@@ -34,16 +32,7 @@ mixin header(headerMod, currentPage)
         else
           a.header__logo(href="main.html", aria-label="Переход на главную")
             +img("content/header", "logo", "jpg", 48, 48, "The Famous")
-        nav.main-nav
-          .main-nav__wrapper
-            ul.main-nav__list
-              each link, index in headerLinks
-                if(index === currentPage)
-                  li.main-nav__item
-                    a.main-nav__link.main-nav__link--active=link.text
-                else
-                  li.main-nav__item
-                    a.main-nav__link(href=link.href)=link.text
+        +main-nav(headerLinks, "heade__nav")
 
         .header_search
           +search("Поиск по названию картины", "Найти")

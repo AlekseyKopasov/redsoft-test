@@ -1,0 +1,14 @@
+mixin main-nav(links, navClass)
+  if (navClass)
+    nav(class="main-nav " + navClass)
+  else
+    nav(class="main-nav")
+  .main-nav__wrapper
+    ul.main-nav__list
+      each link, index in links
+        if(index === currentPage)
+          li.main-nav__item
+            a.main-nav__link.main-nav__link--active=link.text
+        else
+          li.main-nav__item
+            a.main-nav__link(href=link.href)=link.text

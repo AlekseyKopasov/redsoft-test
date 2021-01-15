@@ -1,2 +1,36 @@
 mixin footer(footerMod)
-  footer(class= (footerMod) ? "footer footer--" + footerMod : "footer") Footer
+  -
+    var footerLinks = [
+      {
+        href: "#",
+        text: "Каталог"
+      },
+      {
+        href: "#",
+        text: "Доставка"
+      },
+      {
+        href: "#",
+        text: "Оплата"
+      },
+      {
+        href: "#",
+        text: "Контакты"
+      },
+      {
+        href: "#",
+        text: "О галерее"
+      },
+    ]
+
+  footer(class= (footerMod) ? "footer footer--" + footerMod : "footer")
+    .container
+      .footer__wrapper
+        if(currentPage === "main")
+          a.footer__logo
+            +img("content/header", "logo", "jpg", 48, 48, "The Famous")
+        else
+          a.footer__logo(href="main.html", aria-label="Переход на главную")
+            +img("content/header", "logo", "jpg", 48, 48, "The Famous")
+
+      +main-nav(footerLinks, "footer__nav")
