@@ -1,18 +1,33 @@
 .main-nav__list {
-  display: flex;
   margin: 0;
-  margin-right: 20px;
-  margin-left: 60px;
   padding: 0;
-
   list-style: none;
 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .main-nav__item {
-  margin-right: 20px;
+  margin-right: 24px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .main-nav__link {
+  padding: 13px;
+
   white-space: nowrap;
+  transition: opacity $default-transition-settings;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 1;
+  }
 }
