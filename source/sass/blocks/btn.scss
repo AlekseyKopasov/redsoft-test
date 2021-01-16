@@ -1,7 +1,10 @@
 .btn {
   display: flex;
   align-items: center;
-  padding: 13px 36px;
+  justify-content: center;
+  padding: 13px;
+
+  min-width: 112px;
 
   font-family: inherit;
   font-size: inherit;
@@ -17,6 +20,7 @@
 
   &--in-basket {
     justify-content: flex-start;
+    white-space: nowrap;
     background-color: $color-cioccolato;
 
     svg {
@@ -24,6 +28,11 @@
       fill: transparent;
       order: -1;
     }
+  }
+
+  &--search {
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   &:not(:disabled):not(.btn--disabled):hover,
@@ -44,5 +53,9 @@
     background-color: $color-pink-swan;
     cursor: initial;
     outline: none;
+  }
+
+  &.js-is-hidden {
+    display: none;
   }
 }

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Project Name - описание">
+    <meta name="description" content="The Famous">
     <link rel="preload" href="fonts/merriweather-regular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/merriweather-bold.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
@@ -30,135 +30,143 @@
             <div class="header_search">
               <div class="search">
                 <label>
-                  <input type="search" placeholder="Поиск по названию картины"/>
-                  <button class="btn" type="button">Найти
-                  </button>
+                  <input type="search" placeholder="Поиск по названию картины" aria-label="Поиск по сайту"/>
                 </label>
+                <button class="btn btn--search" type="button">Найти
+                </button>
               </div>
             </div>
           </div>
         </div>
       </header>
       <main>
-        <div class="container">
-          <h1 class="title title-page">Картины эпохи Возрождения</h1>
-          <div class="paintings-list">
-            <ul>
-              <li><a href="#">
-                  <div class="paintings-list__content"><img src="img/content/products/product-1@1x.jpg" srcset="img/content/products/product-1@2x.jpg 2x" width="280" height="360" alt="Рождение Венеры"/>
-                    <div class="paintings-list__title">
-                      <h2>«Рождение Венеры»</h2>
+        <div class="paintings">
+          <div class="container">
+            <h1 class="title title-page">Картины эпохи Возрождения</h1>
+            <div class="paintings-list">
+              <ul>
+                <li><a href="#">
+                    <div class="paintings-list__img"><img src="img/content/products/product-1@1x.jpg" srcset="img/content/products/product-1@2x.jpg 2x" width="280" height="360" alt="Рождение Венеры"/>
                     </div>
-                    <div class="paintings-list__painter">
-                      <p>Сандро Боттичелли</p>
+                    <div class="paintings-list__content">
+                      <div class="paintings-list__title">
+                        <h2>«Рождение Венеры»</h2>
+                      </div>
+                      <div class="paintings-list__painter">
+                        <p>Сандро Боттичелли</p>
+                      </div>
+                    </div></a>
+                  <div class="paintings-list__footer">
+                    <div class="paintings-list__price-wrap">
+                      <div class="paintings-list__price paintings-list__price--old"><span>2000000 $</span></div>
+                      <div class="paintings-list__price"><span>1000000 $</span></div>
                     </div>
-                    <div class="paintings-list__footer">
-                      <div class="paintings-list__price-wrap">
-                        <div class="paintings-list__price paintings-list__price--old"><span>2000000</span></div>
-                        <div class="paintings-list__price"><span>1000000</span></div>
-                      </div>
-                      <div class="paintings-list__btn-wrap">
-                        <button class="btn" type="button">Купить
-                        </button>
-                        <button class="btn btn--in-basket btn--disabled" type="button">В корзине
-                          <svg width="16" height="20" aria-hidden="true">
-                            <use xlink:href="#icon-check"></use>
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="paintings-list__sales-text">
-                        <p></p>
-                      </div>
+                    <div class="paintings-list__btn-wrap">
+                      <button class="btn" type="button">Купить
+                      </button>
+                      <button class="btn btn--in-basket js-is-hidden" type="button">В корзине
+                        <svg width="16" height="20" aria-hidden="true">
+                          <use xlink:href="#icon-check"></use>
+                        </svg>
+                      </button>
                     </div>
-                  </div></a></li>
-            </ul>
-            <ul>
-              <li><a href="#">
-                  <div class="paintings-list__content"><img src="img/content/products/product-2@1x.jpg" srcset="img/content/products/product-2@2x.jpg 2x" width="280" height="360" alt="Тайная вечеря"/>
-                    <div class="paintings-list__title">
-                      <h2>«Тайная вечеря»</h2>
+                    <div class="paintings-list__sales-text js-is-hidden">
+                      <p></p>
                     </div>
-                    <div class="paintings-list__painter">
-                      <p>Леонардо да Винчи</p>
+                  </div>
+                </li>
+                <li><a href="#">
+                    <div class="paintings-list__img"><img src="img/content/products/product-2@1x.jpg" srcset="img/content/products/product-2@2x.jpg 2x" width="280" height="360" alt="Тайная вечеря"/>
                     </div>
-                    <div class="paintings-list__footer">
-                      <div class="paintings-list__price-wrap">
-                        <div class="paintings-list__price paintings-list__price--old"><span></span></div>
-                        <div class="paintings-list__price"><span>5000000</span></div>
+                    <div class="paintings-list__content">
+                      <div class="paintings-list__title">
+                        <h2>«Тайная вечеря»</h2>
                       </div>
-                      <div class="paintings-list__btn-wrap">
-                        <button class="btn" type="button">Купить
-                        </button>
-                        <button class="btn btn--in-basket btn--disabled" type="button">В корзине
-                          <svg width="16" height="20" aria-hidden="true">
-                            <use xlink:href="#icon-check"></use>
-                          </svg>
-                        </button>
+                      <div class="paintings-list__painter">
+                        <p>Леонардо да Винчи</p>
                       </div>
-                      <div class="paintings-list__sales-text">
-                        <p></p>
-                      </div>
+                    </div></a>
+                  <div class="paintings-list__footer">
+                    <div class="paintings-list__price-wrap">
+                      <div class="paintings-list__price paintings-list__price--old"><span></span></div>
+                      <div class="paintings-list__price"><span>5000000 $</span></div>
                     </div>
-                  </div></a></li>
-            </ul>
-            <ul>
-              <li><a href="#">
-                  <div class="paintings-list__content"><img src="img/content/products/product-3@1x.jpg" srcset="img/content/products/product-3@2x.jpg 2x" width="280" height="360" alt="Сотворение Адама"/>
-                    <div class="paintings-list__title">
-                      <h2>«Сотворение Адама»</h2>
+                    <div class="paintings-list__btn-wrap">
+                      <button class="btn" type="button">Купить
+                      </button>
+                      <button class="btn btn--in-basket js-is-hidden" type="button">В корзине
+                        <svg width="16" height="20" aria-hidden="true">
+                          <use xlink:href="#icon-check"></use>
+                        </svg>
+                      </button>
                     </div>
-                    <div class="paintings-list__painter">
-                      <p>Микеланджело</p>
+                    <div class="paintings-list__sales-text js-is-hidden">
+                      <p></p>
                     </div>
-                    <div class="paintings-list__footer">
-                      <div class="paintings-list__price-wrap">
-                        <div class="paintings-list__price paintings-list__price--old"><span>2000000</span></div>
-                        <div class="paintings-list__price"><span>1000000</span></div>
-                      </div>
-                      <div class="paintings-list__btn-wrap">
-                        <button class="btn" type="button">Купить
-                        </button>
-                        <button class="btn btn--in-basket btn--disabled" type="button">В корзине
-                          <svg width="16" height="20" aria-hidden="true">
-                            <use xlink:href="#icon-check"></use>
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="paintings-list__sales-text">
-                        <p></p>
-                      </div>
+                  </div>
+                </li>
+                <li><a href="#">
+                    <div class="paintings-list__img"><img src="img/content/products/product-3@1x.jpg" srcset="img/content/products/product-3@2x.jpg 2x" width="280" height="360" alt="Сотворение Адама"/>
                     </div>
-                  </div></a></li>
-            </ul>
-            <ul>
-              <li><a href="#">
-                  <div class="paintings-list__content"><img src="img/content/products/product-4@1x.jpg" srcset="img/content/products/product-4@2x.jpg 2x" width="280" height="360" alt="Урок анатомии"/>
-                    <div class="paintings-list__title">
-                      <h2>«Урок анатомии»</h2>
-                    </div>
-                    <div class="paintings-list__painter">
-                      <p>Рембрандт</p>
-                    </div>
-                    <div class="paintings-list__footer">
-                      <div class="paintings-list__price-wrap">
-                        <div class="paintings-list__price paintings-list__price--old"><span></span></div>
-                        <div class="paintings-list__price"><span></span></div>
+                    <div class="paintings-list__content">
+                      <div class="paintings-list__title">
+                        <h2>«Сотворение Адама»</h2>
                       </div>
-                      <div class="paintings-list__btn-wrap">
-                        <button class="btn" type="button">Купить
-                        </button>
-                        <button class="btn btn--in-basket btn--disabled" type="button">В корзине
-                          <svg width="16" height="20" aria-hidden="true">
-                            <use xlink:href="#icon-check"></use>
-                          </svg>
-                        </button>
+                      <div class="paintings-list__painter">
+                        <p>Микеланджело</p>
                       </div>
-                      <div class="paintings-list__sales-text">
-                        <p>Продано на аукционе</p>
-                      </div>
+                    </div></a>
+                  <div class="paintings-list__footer">
+                    <div class="paintings-list__price-wrap">
+                      <div class="paintings-list__price paintings-list__price--old"><span>2000000 $</span></div>
+                      <div class="paintings-list__price"><span>1000000 $</span></div>
                     </div>
-                  </div></a></li>
-            </ul>
+                    <div class="paintings-list__btn-wrap">
+                      <button class="btn" type="button">Купить
+                      </button>
+                      <button class="btn btn--in-basket js-is-hidden" type="button">В корзине
+                        <svg width="16" height="20" aria-hidden="true">
+                          <use xlink:href="#icon-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="paintings-list__sales-text js-is-hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </li>
+                <li class="js-sale-product"><a href="#">
+                    <div class="paintings-list__img"><img src="img/content/products/product-4@1x.jpg" srcset="img/content/products/product-4@2x.jpg 2x" width="280" height="360" alt="Урок анатомии"/>
+                    </div>
+                    <div class="paintings-list__content">
+                      <div class="paintings-list__title">
+                        <h2>«Урок анатомии»</h2>
+                      </div>
+                      <div class="paintings-list__painter">
+                        <p>Рембрандт</p>
+                      </div>
+                    </div></a>
+                  <div class="paintings-list__footer">
+                    <div class="paintings-list__price-wrap">
+                      <div class="paintings-list__price paintings-list__price--old"><span></span></div>
+                      <div class="paintings-list__price"><span></span></div>
+                    </div>
+                    <div class="paintings-list__btn-wrap">
+                      <button class="btn" type="button">Купить
+                      </button>
+                      <button class="btn btn--in-basket js-is-hidden" type="button">В корзине
+                        <svg width="16" height="20" aria-hidden="true">
+                          <use xlink:href="#icon-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="paintings-list__sales-text js-is-hidden">
+                      <p>Продано на аукционе</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>

@@ -1,4 +1,4 @@
 mixin btn(btnClass, btnText, mod)
-  button(class=(btnClass) ? "btn " + btnClass + " btn--disabled" : "btn", type="button")= btnText
+  button(class=(btnClass) ? "btn " + btnClass : "btn", type="button")= btnText
     if (mod === 'in-basket')
       +icon("icon-check", 16, 20)

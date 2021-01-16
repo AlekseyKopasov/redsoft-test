@@ -13,8 +13,10 @@
 
   display: flex;
   flex-direction: column;
+  /* stylelint-disable */
   min-height: 100vh;
   min-height: calc(100 * var(--vh, 1vh));
+  /* stylelint-enaable */
   overflow-x: hidden;
 
   &--no-scrollbar {

@@ -1,5 +1,5 @@
 mixin search(placeholder, btnText)
   .search
     label
-      input(type="search", placeholder= placeholder)
-      +btn("", btnText)
+      input(type="search", placeholder= placeholder, aria-label="Поиск по сайту" )
+    +btn("btn--search", btnText)
