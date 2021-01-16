@@ -27,12 +27,12 @@ mixin header(headerMod, currentPage)
     .container
       .header__wrapper
         if(currentPage === "main")
-          a.header__logo
+          a.logo
             +img("content/header", "logo", "jpg", 48, 48, "The Famous")
         else
-          a.header__logo(href="main.html", aria-label="Переход на главную")
+          a.logo(href="main.html", aria-label="Переход на главную")
             +img("content/header", "logo", "jpg", 48, 48, "The Famous")
-        +main-nav(headerLinks, "heade__nav")
+        +main-nav(headerLinks, "header__nav")
 
         .header_search
           +search("Поиск по названию картины", "Найти")

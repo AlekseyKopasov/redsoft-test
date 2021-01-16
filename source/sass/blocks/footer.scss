@@ -1,5 +1,7 @@
 .footer {
+  padding: 12px 0;
   background-color: transparent;
+  border-top: 1px solid $color-gainsboro;
 }
 
 .footer__wrapper {
@@ -9,6 +11,40 @@
   flex-wrap: wrap;
 }
 
+.footer__nav {
+  margin-right: auto;
+}
+
 .footer__nav a {
   color: $color-matterhorn;
+}
+
+.footer__phone,
+.footer__address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-style: normal;
+  font-family: $font-family--main;
+
+  transition: opacity $default-transition-settings;
+
+  svg {
+    order: -1;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.footer__address {
+  margin-left: 50px;
 }

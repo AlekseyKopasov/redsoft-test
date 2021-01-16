@@ -1,8 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  min-height: 100px;
-  padding: 24px 0;
+  padding: 12px 0;
 
   border-bottom: 1px solid $color-gainsboro;
   background-color: inherit;
@@ -17,11 +16,6 @@
   }
 }
 
-.header__logo {
-  flex-shrink: 0;
-  margin-right: 24px;
-}
-
-.header_search {
-  margin-left: auto;
+.header__nav {
+  margin-right: auto;
 }
