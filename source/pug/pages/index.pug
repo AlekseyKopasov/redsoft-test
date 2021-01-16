@@ -10,7 +10,86 @@ block variables
   - var hasFooter = true
   - var footerMod = ""
   - var currentPage = "main"
+  -
+    var paintingList = [
+      {
+        title: "\u00ABРождение Венеры\u00BB",
+        painter: "Сандро Боттичелли",
+        priceOld: "2000000",
+        priceCur: "1000000",
+        imgPath: "content/products",
+        imgName: "product-1",
+        imgFormat: "jpg",
+        imgWidth: 280,
+        imgHeight: 360,
+        imgAlt: "Рождение Венеры",
+        salesText: ""
+      },
+      {
+        title: "\u00ABТайная вечеря\u00BB",
+        painter: "Леонардо да Винчи",
+        priceOld: "",
+        priceCur: "5000000",
+        imgPath: "content/products",
+        imgName: "product-2",
+        imgFormat: "jpg",
+        imgWidth: 280,
+        imgHeight: 360,
+        imgAlt: "Тайная вечеря",
+        salesText: ""
+      },
+      {
+        title: "\u00ABСотворение Адама\u00BB",
+        painter: "Микеланджело",
+        priceOld: "2000000",
+        priceCur: "1000000",
+        imgPath: "content/products",
+        imgName: "product-3",
+        imgFormat: "jpg",
+        imgWidth: 280,
+        imgHeight: 360,
+        imgAlt: "Сотворение Адама",
+        salesText: ""
+      },
+      {
+        title: "\u00ABУрок анатомии\u00BB",
+        painter: "Рембрандт",
+        priceOld: "",
+        priceCur: "",
+        imgPath: "content/products",
+        imgName: "product-4",
+        imgFormat: "jpg",
+        imgWidth: 280,
+        imgHeight: 360,
+        imgAlt: "Урок анатомии",
+        salesText: "Продано на аукционе"
+      },
+    ]
 
 block main
   main
     .container
+      h1.title.title-page Картины эпохи Возрождения
+
+      .paintings-list
+        each card in paintingList
+          ul
+            li
+              a(href="#")
+                .paintings-list__content
+                  +img(card.imgPath, card.imgName, card.imgFormat, card.imgWidth, card.imgHeight, card.imgAlt)
+                  .paintings-list__title
+                    h2= card.title
+                  .paintings-list__painter
+                    p= card.painter
+                  .paintings-list__footer
+                    .paintings-list__price-wrap
+                      .paintings-list__price.paintings-list__price--old
+                        span= card.priceOld
+                      .paintings-list__price
+                        span= card.priceCur
+                    .paintings-list__btn-wrap
+                      +btn("", "Купить")
+                      +btn("btn--in-basket", "В корзине", "in-basket")
+                    .paintings-list__sales-text
+                      p= card.salesText

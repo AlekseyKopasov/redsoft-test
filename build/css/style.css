@@ -674,6 +674,13 @@ button,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+  .search label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch; }
   .search input {
     height: 100%;
     padding: 13px 32px;
@@ -687,9 +694,15 @@ button,
   .search input:active {
     border-color: #776763; }
   .search input:focus {
-    border-color: #b5b5b5; }
+    border-color: #c1b4b1; }
 
 .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 13px 36px;
   font-family: inherit;
   font-size: inherit;
@@ -701,14 +714,29 @@ button,
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease; }
-  .btn:hover, .btn:focus {
+  .btn--in-basket {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    background-color: #5b3a32; }
+    .btn--in-basket svg {
+      margin-right: 5px;
+      fill: transparent;
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1; }
+  .btn:not(:disabled):not(.btn--disabled):hover, .btn:not(:disabled):not(.btn--disabled):focus {
     background-color: #776763;
     outline: none;
     border: none; }
-  .btn:active {
+  .btn:not(:disabled):not(.btn--disabled):active {
     outline: none;
     border: none;
     background-color: #403432; }
+  .btn:disabled, .btn--disabled {
+    background-color: #c1b4b1;
+    cursor: initial;
+    outline: none; }
 
 .logo {
   -ms-flex-negative: 0;

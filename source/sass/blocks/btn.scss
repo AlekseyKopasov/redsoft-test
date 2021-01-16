@@ -1,4 +1,6 @@
 .btn {
+  display: flex;
+  align-items: center;
   padding: 13px 36px;
 
   font-family: inherit;
@@ -13,16 +15,34 @@
 
   transition: background-color $default-transition-settings;
 
-  &:hover,
-  &:focus {
+  &--in-basket {
+    justify-content: flex-start;
+    background-color: $color-cioccolato;
+
+    svg {
+      margin-right: 5px;
+      fill: transparent;
+      order: -1;
+    }
+  }
+
+  &:not(:disabled):not(.btn--disabled):hover,
+  &:not(:disabled):not(.btn--disabled):focus {
     background-color: $color-russett;
     outline: none;
     border: none;
   }
 
-  &:active {
+  &:not(:disabled):not(.btn--disabled):active {
     outline: none;
     border: none;
     background-color: $color-rebel;
+  }
+
+  &:disabled,
+  &--disabled {
+    background-color: $color-pink-swan;
+    cursor: initial;
+    outline: none;
   }
 }
