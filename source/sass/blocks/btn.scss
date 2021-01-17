@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 13px;
+  padding: 14px;
 
   min-width: 112px;
 
@@ -31,8 +31,13 @@
   }
 
   &--search {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 43px;
+    padding-right: 43px;
+  }
+
+  &--buy {
+    padding: 13px 9px;
+    min-width: 112px;
   }
 
   &:not(:disabled):not(.btn--disabled):hover,

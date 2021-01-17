@@ -538,7 +538,7 @@ button,
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 40px; }
+  padding: 0 32px; }
   @media (max-width: 1439px) {
     .container {
       padding: 0 32px; } }
@@ -624,7 +624,7 @@ button,
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-    margin-right: 10px;
+    margin-right: 8px;
     -ms-flex-negative: 0;
         flex-shrink: 0; }
   .footer__phone:hover, .footer__phone:focus,
@@ -636,7 +636,7 @@ button,
     opacity: 1; }
 
 .footer__address {
-  margin-left: 50px; }
+  margin-left: 49px; }
 
 .main-nav__list {
   margin: 0;
@@ -655,7 +655,7 @@ button,
       flex-wrap: wrap; }
 
 .main-nav__item {
-  margin-right: 24px; }
+  margin-right: 23px; }
   .main-nav__item:last-child {
     margin-right: 0; }
 
@@ -691,7 +691,7 @@ button,
   .search input {
     height: 100%;
     width: 100%;
-    padding: 13px 32px;
+    padding: 13px 15px;
     border: 1px solid #e1e1e1;
     border-right: none;
     background-color: transparent;
@@ -714,7 +714,7 @@ button,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 13px;
+  padding: 14px;
   min-width: 112px;
   font-family: inherit;
   font-size: inherit;
@@ -739,8 +739,11 @@ button,
           -ms-flex-order: -1;
               order: -1; }
   .btn--search {
-    padding-left: 32px;
-    padding-right: 32px; }
+    padding-left: 43px;
+    padding-right: 43px; }
+  .btn--buy {
+    padding: 13px 9px;
+    min-width: 112px; }
   .btn:not(:disabled):not(.btn--disabled):hover, .btn:not(:disabled):not(.btn--disabled):focus {
     background-color: #776763;
     outline: none;
@@ -759,7 +762,7 @@ button,
 .logo {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  margin-right: 24px;
+  margin-right: 35px;
   padding: 12px 0; }
 
 .title {
@@ -769,7 +772,7 @@ button,
 
 .title-page {
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
   font-size: 24px;
   line-height: 36px;
   font-weight: 700; }
@@ -801,7 +804,7 @@ button,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: calc(100% / 4 - 32px);
+  max-width: calc(100% / 4 - 24px);
   min-width: 265px;
   width: 100%;
   margin-right: 32px;
@@ -844,7 +847,7 @@ button,
   max-height: 160px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 20px; }
+  margin-bottom: 22px; }
   .paintings-list__img img {
     width: 100%;
     height: auto; }
@@ -852,6 +855,7 @@ button,
 .paintings-list__content {
   padding: 24px;
   padding-top: 0;
+  padding-bottom: 22px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -870,7 +874,6 @@ button,
 
 .paintings-list__painter p {
   margin: 0;
-  margin-bottom: 22px;
   padding: 0;
   font-size: 18px;
   line-height: 27px;
@@ -900,6 +903,7 @@ button,
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
+  letter-spacing: 1px;
   white-space: nowrap; }
   .paintings-list__price--old {
     font-size: 14px;
@@ -911,7 +915,8 @@ button,
 .paintings-list__sales-text {
   display: none;
   text-align: left;
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 10px; }
   .paintings-list__sales-text p {
     margin: 0;
     padding: 0;

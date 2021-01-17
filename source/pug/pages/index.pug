@@ -41,8 +41,8 @@ block variables
       {
         title: "\u00ABСотворение Адама\u00BB",
         painter: "Микеланджело",
-        priceOld: "2000000 $",
-        priceCur: "1000000 $",
+        priceOld: "6000000 $",
+        priceCur: "5000000 $",
         imgPath: "content/products",
         imgName: "product-3",
         imgFormat: "jpg",
@@ -91,7 +91,7 @@ block main
                     .paintings-list__price
                       span= card.priceCur
                   .paintings-list__btn-wrap
-                    +btn("", "Купить")
-                    +btn("btn--in-basket js-is-hidden", "В корзине", "in-basket")
+                    +btn("btn--buy", "Купить")
+                    +btn("btn--buy btn--in-basket js-is-hidden", "В корзине", "in-basket")
                   .paintings-list__sales-text.js-is-hidden
                     p= card.salesText
