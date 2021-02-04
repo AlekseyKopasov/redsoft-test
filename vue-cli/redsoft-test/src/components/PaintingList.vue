@@ -2,6 +2,7 @@
   <div class="paintings">
     <div class="container">
       <h1 class="title title-page">Картины эпохи Возрождения</h1>
+      <loader v-if="loading"/>
       <div class="paintings-list">
         <ul>
           <li>
@@ -158,10 +159,17 @@
 
 <script>
 import buttonsBuy from "./ButtonsBuy";
+import Loader from '@/components/UI/Loader';
 
 export default {
   components: {
+    Loader,
     buttonsBuy,
   },
-};
+
+  data: () => ({
+    loading: false,
+  }),
+
+  };
 </script>
