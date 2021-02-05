@@ -1,31 +1,28 @@
 import axios from 'axios';
 
 export default {
-	state: {},
+  state: {},
 
-	getters: {},
+  getters: {},
 
-	mutations: {
-		getPaint() {
-			const URL = 'https://reqres.in/api/products/3';
-			this.$store.dispatch('setLoading');
+  mutations: {
+    getPaint() {
+      const URL = 'https://reqres.in/api/products/3';
 
-			axios
-				.get(URL)
-				.then(res => {
-					console.log(res.data.data);
-				})
-			.catch(err => {
-				console.log(err);
-			})
+      axios
+        .get(URL)
+        .then(res => {
+          console.log(res.data.data);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+  },
 
-			this.$store.dispatch('setLoading');
-		}
-	},
-
-	actions: {
-		getPaint({commit}) {
-			commit('getPaint');
-		}
-	},
+  actions: {
+    getPaint({commit}) {
+      commit('getPaint');
+    }
+  },
 };
