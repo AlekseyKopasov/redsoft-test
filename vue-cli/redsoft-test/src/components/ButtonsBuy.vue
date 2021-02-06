@@ -32,14 +32,13 @@ export default {
   methods: {
     ...mapActions(["getPaint"]),
 
-    buyPaint() {
+    async buyPaint() {
       if (!this.demoTimer) {
         this.isLoad = !this.isLoad;
+        await this.getPaint();
 
         this.demoTimer = setTimeout(() => {
-          this.getPaint();
           this.inBasket = !this.inBasket;
-
           localStorage.setItem("inBasked", this);
         }, 1000);
       }
@@ -92,6 +91,8 @@ $color-default-white: #ffffff;
 }
 
 .btn--in-basket {
+  cursor: initial;
+
   &:focus,
   &:active {
     outline: none;

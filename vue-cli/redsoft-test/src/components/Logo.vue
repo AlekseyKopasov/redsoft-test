@@ -1,5 +1,5 @@
 <template>
-  <a class="logo"
+  <a class="logo" aria-label="На Главную"
     ><img
       src="~@/assets/img/content/header/logo@1x.jpg"
       srcset="~@/assets/img/content/header/logo@2x.jpg 2x"
