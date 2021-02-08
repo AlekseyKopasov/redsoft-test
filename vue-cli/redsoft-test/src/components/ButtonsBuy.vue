@@ -21,6 +21,7 @@
 
 <script>
 import { mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   data: () => ({
@@ -30,19 +31,24 @@ export default {
   }),
 
   methods: {
-    ...mapActions(["getPaint"]),
+    ...mapActions(["getPaint", "savePaintId"]),
 
-    async buyPaint() {
+    async buyPaint(evt) {
       if (!this.demoTimer) {
         this.isLoad = !this.isLoad;
         await this.getPaint();
 
         this.demoTimer = setTimeout(() => {
           this.inBasket = !this.inBasket;
-          localStorage.setItem("inBasked", this);
+          const ID = evt.target.closest("li").getAttribute("id");
+          this.savePaintId(ID);
         }, 1000);
       }
     },
+  },
+
+  computed: {
+    ...mapGetters(["getPicInBasket"]),
   },
 
   destroyed() {

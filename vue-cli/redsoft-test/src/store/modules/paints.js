@@ -67,13 +67,13 @@ export default {
         sales: "Продано на аукционе",
         status: "sold"
       },
-    ]
+    ],
+    picInBasket: [],
   },
 
   getters: {
-    paintsList(s) {
-      return s.paintsList;
-    },
+    paintsList: s => s.paintsList,
+    getPicInBasket: s => s.picInBasket,
   },
 
   mutations: {
@@ -88,12 +88,49 @@ export default {
         .catch(err => {
           console.log(err);
         })
+    },
+    savePaintId(state, id) {
+      state.picInBasket.push(id);
+      localStorage.setItem("picInBasketIdList", state.picInBasket);
+    },
+    filterPaints() {
+    //   const idList = [];
+    //   let LSData = localStorage.getItem("picInBasketIdList");
+
+    //   if (!LSData) {
+    //     return;
+    //   }
+      
+    //   LSData = Array.from(LSData);
+    //   LSData.forEach(item => {
+    //     if (parseInt(item, 10)) {
+    //       idList.push((parseInt(item, 10)));
+    //     }
+    //   });
+
+    //   const filteredArr = [];
+    //     idList.forEach((item) => {
+    //       for (let paint of state.paintsList) {
+    //         if (paint.id !== item) {
+    //           filteredArr.push(paint);
+    //           return;
+    //         }
+    //       }
+    //     })
+    //     console.log('filteredArr :>> ', filteredArr);
+    //   return filteredArr;
     }
   },
 
   actions: {
-    getPaint({commit}) {
+    getPaint({ commit }) {
       commit('getPaint');
+    },
+    savePaintId({ commit }, id) {
+      commit("savePaintId", id);
+    },
+    filterPaints({ commit }) {
+      commit("filterPaints");
     }
   },
 };

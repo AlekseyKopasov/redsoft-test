@@ -1,5 +1,11 @@
 <template>
-  <li :class="{ 'js-sale-product': cardData.card.status === 'sold' }">
+  <li
+    :id="cardData.card.id"
+    :class="[
+      { 'js-sale-product': cardData.card.status === 'sold' },
+      { test: isSelected },
+    ]"
+  >
     <a href="#">
       <div class="paintings-list__img">
         <img
@@ -33,7 +39,7 @@
         </div>
       </div>
       <div class="paintings-list__btn-wrap">
-        <buttonsBuy />
+        <buttonsBuy :selected="isSelected" />
       </div>
       <div
         class="paintings-list__sales-text"
@@ -63,6 +69,25 @@ export default {
   },
   computed: {
     ...mapGetters(["paintsList"]),
+
+    isSelected() {
+      const idList = [];
+      let LSData = localStorage.getItem("picInBasketIdList");
+
+      if (!LSData) {
+        return;
+      }
+
+      LSData = Array.from(LSData);
+      LSData.forEach((item) => {
+        if (parseInt(item, 10)) {
+          idList.push(parseInt(item, 10));
+        }
+      });
+
+      const currId = this.cardData.card.id;
+      idList.filter((item) => currId === item);
+    },
   },
   methods: {
     imgSrc(idx) {

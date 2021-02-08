@@ -19,6 +19,7 @@
 import paintCard from "@/components/PaintCard";
 
 import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   components: {
@@ -33,10 +34,10 @@ export default {
     ...mapGetters(["paintsList"]),
   },
 
-  mounted: () => {
-    // this.paintList = paintList;
-    // console.log(paintList);
-    // console.log(this.$store.getters.paintsList());
+  methods: {
+    ...mapActions(["savePaintId"]),
   },
+
+  mounted: () => {},
 };
 </script>
