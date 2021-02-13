@@ -9,8 +9,8 @@
     <a href="#">
       <div class="paintings-list__img">
         <img
-          :src="imgSrc(cardData.idx)"
-          :srcset="imgSrcset(cardData.idx)"
+          :src="imgSrc(cardData.index)"
+          :srcset="imgSrcset(cardData.index)"
           :width="cardData.card.img.width"
           :height="cardData.card.img.height"
           :alt="cardData.card.img.alt"
@@ -68,11 +68,11 @@ export default {
     buttonsBuy,
   },
   computed: {
-    ...mapGetters(["paintsList"]),
+    ...mapGetters(['paintsList']),
 
     isSelected() {
       const idList = [];
-      let LSData = localStorage.getItem("picInBasketIdList");
+      let LSData = localStorage.getItem('picInBasketIdList');
 
       if (!LSData) {
         return;
@@ -87,6 +87,9 @@ export default {
 
       const currId = this.cardData.card.id;
       idList.filter((item) => currId === item);
+
+      // dev only
+      return '';
     },
   },
   methods: {
@@ -94,7 +97,7 @@ export default {
       return this.paintsList[idx].img.src;
     },
     imgSrcset(idx) {
-      return this.paintsList[idx].img.srcset + " 2x";
+      return this.paintsList[idx].img.srcset + ' 2x';
     },
   },
 };

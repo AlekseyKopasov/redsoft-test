@@ -80,7 +80,7 @@ import search from "@/components/Search.vue";
 import paintingList from "@/components/PaintingList.vue";
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     logo,
     mainNav,
@@ -90,6 +90,6 @@ export default {
 };
 </script>
 
-<style landg="scss">
+<style lang="scss">
 @import "assets/css/style.min.css";
 </style>

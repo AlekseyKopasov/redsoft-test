@@ -28,7 +28,7 @@ export default {
     extraClass: {
       type: String,
       require: false,
-      default: "",
+      default: '',
     },
   },
   // data: () => ({

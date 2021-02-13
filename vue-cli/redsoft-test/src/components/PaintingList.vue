@@ -5,9 +5,9 @@
       <div class="paintings-list">
         <ul>
           <paintCard
-            v-for="(card, idx) in paintsList"
+            v-for="(card, index) in paintsList"
             :key="card.id"
-            :cardData="{ card, idx }"
+            :cardData="{ card, index }"
           />
         </ul>
       </div>
@@ -31,13 +31,12 @@ export default {
   }),
 
   computed: {
-    ...mapGetters(["paintsList"]),
+    ...mapGetters(['paintsList']),
   },
 
   methods: {
-    ...mapActions(["savePaintId"]),
+    ...mapActions(['savePaintId']),
+    ...mapActions(['savePaintId']),
   },
-
-  mounted: () => {},
 };
 </script>

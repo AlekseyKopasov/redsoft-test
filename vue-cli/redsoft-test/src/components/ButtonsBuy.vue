@@ -31,7 +31,7 @@ export default {
   }),
 
   methods: {
-    ...mapActions(["getPaint", "savePaintId"]),
+    ...mapActions(['getPaint', 'savePaintId']),
 
     async buyPaint(evt) {
       if (!this.demoTimer) {
@@ -40,7 +40,7 @@ export default {
 
         this.demoTimer = setTimeout(() => {
           this.inBasket = !this.inBasket;
-          const ID = evt.target.closest("li").getAttribute("id");
+          const ID = evt.target.closest('li').getAttribute('id');
           this.savePaintId(ID);
         }, 1000);
       }
@@ -48,7 +48,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["getPicInBasket"]),
+    ...mapGetters(['getPicInBasket']),
   },
 
   destroyed() {
