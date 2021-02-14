@@ -31,8 +31,5 @@ export default {
       default: '',
     },
   },
-  // data: () => ({
-  //   extraClass: additionalClass,
-  // }),
 };
 </script>

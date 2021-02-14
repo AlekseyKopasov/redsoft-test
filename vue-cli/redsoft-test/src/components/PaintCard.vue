@@ -3,7 +3,7 @@
     :id="cardData.card.id"
     :class="[
       { 'js-sale-product': cardData.card.status === 'sold' },
-      { test: isSelected },
+      { 'js-in-basket': cardData.card.status === 'in_basket' },
     ]"
   >
     <a href="#">
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="paintings-list__btn-wrap">
-        <buttonsBuy :selected="isSelected" />
+        <buttonsBuy :inBasket="cardData.card.status === 'in_basket'" />
       </div>
       <div
         class="paintings-list__sales-text"
@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import buttonsBuy from "@/components/ButtonsBuy";
-import { mapGetters } from "vuex";
+import buttonsBuy from '@/components/ButtonsBuy';
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -69,28 +69,6 @@ export default {
   },
   computed: {
     ...mapGetters(['paintsList']),
-
-    isSelected() {
-      const idList = [];
-      let LSData = localStorage.getItem('picInBasketIdList');
-
-      if (!LSData) {
-        return;
-      }
-
-      LSData = Array.from(LSData);
-      LSData.forEach((item) => {
-        if (parseInt(item, 10)) {
-          idList.push(parseInt(item, 10));
-        }
-      });
-
-      const currId = this.cardData.card.id;
-      idList.filter((item) => currId === item);
-
-      // dev only
-      return '';
-    },
   },
   methods: {
     imgSrc(idx) {

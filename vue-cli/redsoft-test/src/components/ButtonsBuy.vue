@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      v-if="!inBasket"
+      v-if="!inBasket && !isSelected"
       class="btn btn--buy"
       :class="{ load: isLoad }"
       type="button"
@@ -10,7 +10,7 @@
       <span class="btn__text">Купить</span>
       <span class="btn__spinner"></span>
     </button>
-    <button v-if="inBasket" class="btn btn--buy btn--in-basket" type="button">
+    <button v-else class="btn btn--buy btn--in-basket" type="button">
       В корзине
       <svg width="16" height="20" aria-hidden="true">
         <use xlink:href="#icon-check"></use>
@@ -20,14 +20,21 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-import { mapGetters } from "vuex";
+import { mapActions } from 'vuex';
 
 export default {
+  props: {
+    inBasket: {
+      type: Boolean,
+      required: true,
+      default: false
+    }
+  },
+
   data: () => ({
-    inBasket: false,
     isLoad: false,
     demoTimer: null,
+    isSelected: false,
   }),
 
   methods: {
@@ -39,16 +46,12 @@ export default {
         await this.getPaint();
 
         this.demoTimer = setTimeout(() => {
-          this.inBasket = !this.inBasket;
+          this.isSelected = !this.isSelected;
           const ID = evt.target.closest('li').getAttribute('id');
           this.savePaintId(ID);
         }, 1000);
       }
     },
-  },
-
-  computed: {
-    ...mapGetters(['getPicInBasket']),
   },
 
   destroyed() {

@@ -73,7 +73,6 @@ export default {
 
   getters: {
     paintsList: s => s.paintsList,
-    getPicInBasket: s => s.picInBasket,
   },
 
   mutations: {
@@ -89,48 +88,51 @@ export default {
           console.log(err);
         })
     },
+
     savePaintId(state, id) {
+      const arr = state.picInBasket;
+      for (let i = 0; i < arr.length; i+= 1) {
+        if (!+arr[i]) {
+          arr.splice(arr[i], 1);
+        }
+        if (+arr[i] === +id) {
+          return;
+        }
+      }
+
       state.picInBasket.push(id);
       localStorage.setItem('picInBasketIdList', state.picInBasket);
     },
-    filterPaints() {
-    //   const idList = [];
-    //   let LSData = localStorage.getItem('picInBasketIdList');
 
-    //   if (!LSData) {
-    //     return;
-    //   }
-      
-    //   LSData = Array.from(LSData);
-    //   LSData.forEach(item => {
-    //     if (parseInt(item, 10)) {
-    //       idList.push((parseInt(item, 10)));
-    //     }
-    //   });
+    loadPaintsInBasket(state) {
+      let picInBasket = localStorage.getItem('picInBasketIdList');
+      if (!picInBasket) { return; }
 
-    //   const filteredArr = [];
-    //     idList.forEach((item) => {
-    //       for (let paint of state.paintsList) {
-    //         if (paint.id !== item) {
-    //           filteredArr.push(paint);
-    //           return;
-    //         }
-    //       }
-    //     })
-    //     console.log('filteredArr :>> ', filteredArr);
-    //   return filteredArr;
-    }
+      state.picInBasket = picInBasket.split('') ?? [];
+
+      for (let id of state.picInBasket) {
+        id = parseInt(id, 10);
+
+        if (id) {
+          state.paintsList.find(item => {
+            item.id === id ? item.status = 'in_basket' : false;
+          });
+        }
+      }
+    },
   },
 
   actions: {
     getPaint({ commit }) {
       commit('getPaint');
     },
+
     savePaintId({ commit }, id) {
       commit('savePaintId', id);
     },
-    filterPaints({ commit }) {
-      commit('filterPaints');
+
+    loadPaintsInBasket({ commit }) {
+      commit('loadPaintsInBasket');
     }
   },
 };

@@ -16,10 +16,9 @@
 </template>
 
 <script>
-import paintCard from "@/components/PaintCard";
+import paintCard from '@/components/PaintCard';
 
-import { mapGetters } from "vuex";
-import { mapActions } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -30,13 +29,12 @@ export default {
     cardData: null,
   }),
 
-  computed: {
-    ...mapGetters(['paintsList']),
+  mounted() {
+    this.$store.dispatch('loadPaintsInBasket');
   },
 
-  methods: {
-    ...mapActions(['savePaintId']),
-    ...mapActions(['savePaintId']),
+  computed: {
+    ...mapGetters(['paintsList']),
   },
 };
 </script>
